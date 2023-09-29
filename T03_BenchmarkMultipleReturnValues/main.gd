@@ -63,13 +63,6 @@ var best_array_result := 9223372036854775807
 var best_dictionary_result := 9223372036854775807
 
 
-func update_best_result_label(t: int, best_result: int, label: Label) -> int:
-    if t < best_result:
-        best_result = t
-        label.text = "best: %d μs" % t
-    return best_result
-
-
 func run_benchmark_and_update_ui(benchmark_function: Callable, iterations: int, best_result: int, last_result_label: Label, best_result_label: Label) -> int:
     var t = benchmark(benchmark_function, iterations)
     last_result_label.text = "%d μs" % t
