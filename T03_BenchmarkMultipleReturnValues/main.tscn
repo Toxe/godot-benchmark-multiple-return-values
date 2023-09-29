@@ -1,0 +1,103 @@
+[gd_scene load_steps=2 format=3 uid="uid://14ylmb8pvlfr"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_7k7cr"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7k7cr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -113.5
+offset_top = -29.0
+offset_right = 113.5
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Iterations:"
+
+[node name="IterationsLineEdit" type="LineEdit" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "1000"
+alignment = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="BenchmarkClassButton" type="Button" parent="VBoxContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Class"
+
+[node name="ResultsClassLabel" type="Label" parent="VBoxContainer/HBoxContainer2/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 2
+
+[node name="BestResultClassLabel" type="Label" parent="VBoxContainer/HBoxContainer2/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="BenchmarkArrayButton" type="Button" parent="VBoxContainer/HBoxContainer2/VBoxContainer2"]
+layout_mode = 2
+text = "Array"
+
+[node name="ResultsArrayLabel" type="Label" parent="VBoxContainer/HBoxContainer2/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 2
+
+[node name="BestResultArrayLabel" type="Label" parent="VBoxContainer/HBoxContainer2/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="BenchmarkDictionaryButton" type="Button" parent="VBoxContainer/HBoxContainer2/VBoxContainer3"]
+layout_mode = 2
+text = "Dictionary"
+
+[node name="ResultsDictionaryLabel" type="Label" parent="VBoxContainer/HBoxContainer2/VBoxContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 2
+
+[node name="BestResultDictionaryLabel" type="Label" parent="VBoxContainer/HBoxContainer2/VBoxContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 2
+
+[connection signal="text_changed" from="VBoxContainer/HBoxContainer/IterationsLineEdit" to="." method="_on_iterations_line_edit_text_changed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/VBoxContainer/BenchmarkClassButton" to="." method="_on_benchmark_class_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/VBoxContainer2/BenchmarkArrayButton" to="." method="_on_benchmark_array_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/VBoxContainer3/BenchmarkDictionaryButton" to="." method="_on_benchmark_dictionary_button_pressed"]
