@@ -1,4 +1,4 @@
-# Benchmark: Returning multiple values from a function in GDScript
+# Godot Benchmark: Returning multiple values from a function in GDScript
 
 I recently wondered what the best way to return multiple values from a function would be. There are proposals but GDScript doesn't support this yet so we have to improvise and out of curiosity I wanted to know which would be the fastest.
 
@@ -25,7 +25,7 @@ Note that we don't just measure how long it takes to create and return these val
 
 Here are the results:
 
-![Alt text](images/screenshot.png)
+![results](images/screenshot.png)
 
 - Returning an array is fastest but the least readable.
 - Returning a dictionary is 10% slower than returning an array.
