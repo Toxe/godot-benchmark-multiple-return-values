@@ -10,7 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Test 03 - Benchmark: Multiple return values"
+config/name="Benchmark: Multiple return values"
+config/tags=PackedStringArray("test")
 run/main_scene="res://main.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
