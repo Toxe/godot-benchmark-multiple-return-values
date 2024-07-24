@@ -11,9 +11,9 @@ config_version=5
 [application]
 
 config/name="Benchmark: Multiple return values"
-config/tags=PackedStringArray("test")
+config/tags=PackedStringArray("2d", "test")
 run/main_scene="res://main.tscn"
-config/features=PackedStringArray("4.1", "Forward Plus")
+config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
