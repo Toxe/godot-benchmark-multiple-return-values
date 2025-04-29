@@ -1,5 +1,7 @@
 extends Control
 
+const expected_length := 54
+
 
 func benchmark(fn: Callable, iterations: int) -> int:
     var t0 = Time.get_ticks_usec()
@@ -27,8 +29,8 @@ func bench_class(iterations: int):
     for i in iterations:
         var ret := return_class()
         var s = "value: %d, vector: %s, text: \"%s\"" % [ret.value, ret.vector, ret.text]
-        if len(s) != 50:
-            print("string should be length %d but is %d instead" % [50, len(s)])
+        if len(s) != expected_length:
+            print("string should be length %d but is %d instead" % [expected_length, len(s)])
 
 
 # ---- return array benchmark -----------------------------------------------
@@ -40,8 +42,8 @@ func bench_array(iterations: int):
     for i in iterations:
         var ret := return_array()
         var s = "value: %d, vector: %s, text: \"%s\"" % [ret[0], ret[1], ret[2]]
-        if len(s) != 50:
-            print("string should be length %d but is %d instead" % [50, len(s)])
+        if len(s) != expected_length:
+            print("string should be length %d but is %d instead" % [expected_length, len(s)])
 
 
 # ---- return dictionary benchmark ------------------------------------------
@@ -53,8 +55,8 @@ func bench_dictionary(iterations: int):
     for i in iterations:
         var ret := return_dictionary()
         var s = "value: %d, vector: %s, text: \"%s\"" % [ret["value"], ret["vector"], ret["text"]]
-        if len(s) != 50:
-            print("string should be length %d but is %d instead" % [50, len(s)])
+        if len(s) != expected_length:
+            print("string should be length %d but is %d instead" % [expected_length, len(s)])
 
 
 # ---- UI stuff -------------------------------------------------------------
